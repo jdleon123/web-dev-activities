@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="./js/numbers.js"></script>
+    <script src="./js/operations.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #6a11cb, #020407);
+            color: #fff;
+        }
+
+        .calculator {
+            background: #e2037e;
+            width: 360px;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 15px rgba(146, 4, 146, 0.185);
+        }
+
+        .calculator input {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background: #1e1e1e;
+            color: #fff;
+            text-align: right;
+        }
+
+        .calculator .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .calculator button {
+            height: 60px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #444;
+            color: #fff;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .calculator button:hover {
+            background: #555;
+            transform: scale(1.05);
+        }
+
+        .calculator button.operator {
+            background: #f39c12;
+        }
+
+        .calculator button.operator:hover {
+            background: #e67e22;
+        }
+
+        .calculator button.equal {
+            background: #3498db;
+            grid-column: span 1;
+        }
+
+        .calculator button.equal:hover {
+            background: #2980b9;
+        }
+
+        .calculator button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display1" value="0" readonly>
+        <input type="text" id="display2" value="0" readonly>
+        <input type="text" id="operator" readonly>
+        <div class="buttons">
+            <button type="button" onclick="seven()">7</button>
+            <button type="button" onclick="eight()">8</button>
+            <button type="button" onclick="nine()">9</button>
+            <button class="operator" onclick="plus()">+</button>
+            <button type="button" onclick="four()">4</button>
+            <button type="button" onclick="five()">5</button>
+            <button type="button" onclick="six()">6</button>
+            <button class="operator" onclick="minus()">-</button>
+            <button type="button" onclick="one()">1</button>
+            <button type="button" onclick="two()">2</button>
+            <button type="button" onclick="three()">3</button>
+            <button class="operator" onclick="times()">*</button>
+            <button type="button" onclick="zero()">0</button>
+            <button type="button" onclick="point()">.</button>
+            <button class="equal" onclick="equal()">=</button>
+            <button class="operator" onclick="divide()">/</button>
+        </div>
+    </div>
+</body>
+</html>
